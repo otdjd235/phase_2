@@ -11,3 +11,6 @@ class ErreurQuantite(RuntimeError):
         raise ErreurQuantite
 class LiquiditeInsuffisante(RuntimeError):
     """Classe qui en capsule le message d'erreur LiquiditéInsuffisante"""
+    def liquiditeinsuffisante(self):
+        """Fonction qui souleve le message d'erreur LiquiditéInsuffisante """
+        raise LiquiditeInsuffisante
