@@ -14,3 +14,4 @@ class LiquiditeInsuffisante(RuntimeError):
     def liquiditeinsuffisante(self):
         """Fonction qui souleve le message d'erreur LiquiditéInsuffisante """
         raise LiquiditeInsuffisante
+    
