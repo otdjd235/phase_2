@@ -4,3 +4,5 @@ class ErreurDate(RuntimeError):
     def erreurdate(self):
         """Fonction qui souleve le message d'erreur Erreur date """
         raise ErreurDate
+class ErreurQuantite(RuntimeError):
+    """Classe qui en capsule le message d'erreur ErreurQuantité"""
