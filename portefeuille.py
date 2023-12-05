@@ -19,6 +19,7 @@ class Portefeuille:
         "solde"
         if date > date.today():
             raise ErreurDate
+
         solde = 0
         for transaction in self.transactions:
             if transaction['date'] <= date:
@@ -90,4 +91,29 @@ class Portefeuille:
         years = date_proj.year - dt.today().year
         future_value = valeur_totale * (1 + rendement / 100) ** years
         return future_value
+portefeuille = Portefeuille(bourse_fictive)
+
+portefeuille.deposer(1000)
+
+portefeuille.acheter("goog", 8)
+
+portefeuille.vendre("goog", 10)
+
+titres_actuels = portefeuille.titres()
+print("Titres actuels :", titres_actuels)
+
+solde_actuel = portefeuille.solde()
+print("Solde actuel :", solde_actuel)
+
+valeur_totale_actuelle = portefeuille.valeur_totale()
+print("Valeur totale actuelle :", valeur_totale_actuelle)
+
+symboles_titres = ["goog", "goog"]
+valeur_titres_specifiques = portefeuille.valeur_des_titres(symboles_titres)
+print(f"Valeur des titres spécifiques ({symboles_titres}) actuelle :", valeur_titres_specifiques)
+
+date_projetee = dt.today().replace(year=dt.today().year + 2)
+
+valeur_projetee = portefeuille.valeur_projetee(date_projetee, 8)
+print(f"Valeur projetée dans deux ans avec un rendement de {8}%: {valeur_projetee}")
 
