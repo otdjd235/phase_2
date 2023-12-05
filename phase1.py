@@ -44,3 +44,4 @@ def produire_historique(symbol, debut = test.debut, fin = test.fin, valeur = tes
 
 for symb in test.symboles:
     print(produire_historique(symbol = symb))
+    
