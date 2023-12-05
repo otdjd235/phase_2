@@ -53,3 +53,6 @@ class Bourse:
             elif a != []:
                 price = a
         return float(price[0][1])
+x = Bourse()
+resultat = x.prix('goog', dt(2023,12,3))
+print(resultat)
